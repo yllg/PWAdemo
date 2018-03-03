@@ -1,0 +1,13 @@
+{
+    "name":"lgapp",
+    "short_name":"lg程序",
+    "display":"standalone",
+    "start_url":"/",
+    "theme_color":"#112212",
+    "background_color":"#12345",
+    "icons":[{
+        "src":"a.png",
+        "sizes":"128*128",
+        "type":"images"
+    }]
+}

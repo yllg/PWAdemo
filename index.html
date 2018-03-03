@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PWA应用</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="//webmap1.bdimg.com/mobile/simple/static/common/images/startup_320_460_96280c8.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="//webmap1.bdimg.com/mobile/simple/static/common/images/map-logo-180_eb76f71.png">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 设计一个shell 壳；只是一个概念，并没有什么新技术 -->
+    <header></header>
+    <main>
+        .......
+    </main>
+    <footer></footer>
+    <img src="./images/马赛克拼图.jpeg" alt="" width="450px" height="450px">
+    
+    <script src="./js/index.js"></script>
+    <script src="./js/test.js"></script>
+    <script>
+        //判断是否具备实现PWA的能力
+        if("serviceWorker" in navigator){
+            //第一次是null，生效了才会有值的
+            console.log('当前的控制权',navigator.serviceWorker.controller);
+            //注册sw.js，把控制权交给sw.js文件
+            navigator.serviceWorker.register('./sw.js')
+            .then((registration)=>{
+                //需要启动一个服务
+                console.log('serviceWorker注册成功，范围为：',registration.scope);
+            }).catch((err)=>{
+                console.log('serviceWorker注册失败，错误详情：',err);
+            })
+        }
+    
+    </script>
+</body>
+</html>
